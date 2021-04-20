@@ -13,7 +13,7 @@ from PySide6.QtCore import *
 from PySide6.QtGui import *
 from PySide6.QtWidgets import *
 
-import images_rc
+import assets.qrc.images_rc
 
 class Ui_login_widget(object):
     def setupUi(self, login_widget):
