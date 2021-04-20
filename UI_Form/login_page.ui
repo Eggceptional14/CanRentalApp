@@ -41,7 +41,7 @@
    <string notr="true">QWidget {
 	background-image: url(:/login/login_background.png);
 	background-repeat: no-repeat;
-	backgrond-position: center;
+	background-position: center;
 }
 
 QFrame {

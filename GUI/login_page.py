@@ -32,7 +32,7 @@ class Ui_login_widget(object):
         login_widget.setStyleSheet(u"QWidget {\n"
 "	background-image: url(:/login/login_background.png);\n"
 "	background-repeat: no-repeat;\n"
-"	backgrond-position: center;\n"
+"	background-position: center;\n"
 "}\n"
 "\n"
 "QFrame {\n"
@@ -130,7 +130,6 @@ class Ui_login_widget(object):
         self.login_label.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
 
         self.verticalLayout_3.addWidget(self.login_label)
-
 
         self.username_field = QLineEdit(self.login_frame)
         self.username_field.setAttribute(Qt.WA_MacShowFocusRect, 0)
