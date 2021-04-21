@@ -8,12 +8,11 @@
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
 
-from PySide6 import Qt
 from PySide6.QtCore import *
 from PySide6.QtGui import *
 from PySide6.QtWidgets import *
 
-import assets.qrc.images_rc
+import assets.images_rc
 
 class Ui_login_widget(object):
     def setupUi(self, login_widget):
@@ -25,6 +24,7 @@ class Ui_login_widget(object):
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(login_widget.sizePolicy().hasHeightForWidth())
+
         login_widget.setSizePolicy(sizePolicy)
         login_widget.setMinimumSize(QSize(700, 500))
         login_widget.setMaximumSize(QSize(650, 450))
@@ -132,7 +132,6 @@ class Ui_login_widget(object):
         self.verticalLayout_3.addWidget(self.login_label)
 
         self.username_field = QLineEdit(self.login_frame)
-        self.username_field.setAttribute(Qt.WA_MacShowFocusRect, 0)
         self.username_field.setObjectName(u"username_field")
         self.username_field.setMinimumSize(QSize(300, 40))
         self.username_field.setMaximumSize(QSize(300, 40))
@@ -149,7 +148,6 @@ class Ui_login_widget(object):
         self.verticalLayout_3.addWidget(self.username_field)
 
         self.password_field = QLineEdit(self.login_frame)
-        self.password_field.setAttribute(Qt.WA_MacShowFocusRect, 0)
         self.password_field.setObjectName(u"password_field")
         self.password_field.setMinimumSize(QSize(300, 40))
         self.password_field.setMaximumSize(QSize(300, 40))
