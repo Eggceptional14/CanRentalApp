@@ -1,10 +1,17 @@
 class CarItem:
-    def __init__(self, carId, carType, price, availability):
+    def __init__(self, image, carId, carType, price, availability):
+        self.image = image
         self.carId = carId
         self.carType = carType
         self.price = price
         self.availability = availability
     
+    def getImage(self):
+        return self.image
+
+    def setImage(self, image):
+        self.image = image
+
     def getCarId(self):
         return self.carId
 
