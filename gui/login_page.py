@@ -27,12 +27,11 @@ class Ui_login_widget(object):
         sizePolicy.setHeightForWidth(login_widget.sizePolicy().hasHeightForWidth())
         login_widget.setSizePolicy(sizePolicy)
         login_widget.setMinimumSize(QSize(700, 500))
-        login_widget.setMaximumSize(QSize(650, 450))
+        login_widget.setMaximumSize(QSize(700, 500))
         login_widget.setAcceptDrops(False)
-        login_widget.setStyleSheet(u"QWidget {\n"                          
+        login_widget.setStyleSheet(u"QWidget {\n"  
+"   background-color: #393e46;\n"                            
 "	background-image: url(:/login/login_background.png);\n"
-"	background-repeat: no-repeat;\n"
-"	background-position: center;\n"
 "}\n"
 "\n"
 "QFrame {\n"
@@ -82,12 +81,12 @@ class Ui_login_widget(object):
 
         self.horizontalLayout_3.addWidget(self.label, 0, Qt.AlignLeft)
 
-        self.pushButton_2 = QPushButton(login_widget)
-        self.pushButton_2.setObjectName(u"pushButton_2")
+        self.signup_button = QPushButton(login_widget)
+        self.signup_button.setObjectName(u"signup_button")
         font1 = QFont()
         font1.setPointSize(16)
-        self.pushButton_2.setFont(font1)
-        self.pushButton_2.setStyleSheet(u"QPushButton {\n"
+        self.signup_button.setFont(font1)
+        self.signup_button.setStyleSheet(u"QPushButton {\n"
 "	background: none;\n"
 "	border: none;\n"
 "	color: rgb(17, 135, 157);\n"
@@ -99,7 +98,7 @@ class Ui_login_widget(object):
 "	color: rgb(183, 182, 184);\n"
 "}")
 
-        self.horizontalLayout_3.addWidget(self.pushButton_2)
+        self.horizontalLayout_3.addWidget(self.signup_button)
 
 
         self.verticalLayout.addLayout(self.horizontalLayout_3)
@@ -230,7 +229,7 @@ class Ui_login_widget(object):
     def retranslateUi(self, login_widget):
         login_widget.setWindowTitle(QCoreApplication.translate("login_widget", u"CarRental", None))
         self.label.setText(QCoreApplication.translate("login_widget", u"<html><head/><body><p><span style=\" color:#adafb4;\">Car</span><span style=\" color:#dadee2;\">Rental</span></p></body></html>", None))
-        self.pushButton_2.setText(QCoreApplication.translate("login_widget", u"Create Account", None))
+        self.signup_button.setText(QCoreApplication.translate("login_widget", u"Create Account", None))
         self.login_label.setText(QCoreApplication.translate("login_widget", u"<strong>Login</strong>", None))
         self.username_field.setText("")
         self.username_field.setPlaceholderText(QCoreApplication.translate("login_widget", u"Username", None))
