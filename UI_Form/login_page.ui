@@ -286,68 +286,22 @@ QPushButton:pressed {
         </property>
        </widget>
       </item>
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,1">
-        <property name="spacing">
-         <number>-1</number>
+      <item alignment="Qt::AlignRight">
+       <widget class="QPushButton" name="signin_button">
+        <property name="minimumSize">
+         <size>
+          <width>100</width>
+          <height>40</height>
+         </size>
         </property>
-        <property name="sizeConstraint">
-         <enum>QLayout::SetMinimumSize</enum>
+        <property name="maximumSize">
+         <size>
+          <width>100</width>
+          <height>40</height>
+         </size>
         </property>
-        <property name="leftMargin">
-         <number>0</number>
-        </property>
-        <item>
-         <widget class="QPushButton" name="pushButton">
-          <property name="minimumSize">
-           <size>
-            <width>150</width>
-            <height>40</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>150</width>
-            <height>40</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>14</pointsize>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QPushButton {
-	background: none;
-	border: none;
-	color: rgb(50, 50, 50);
-}
-
-QPushButton:pressed {
-	color: rgb(17, 135, 157);
-}</string>
-          </property>
-          <property name="text">
-           <string>Forgot Password</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="signin_button">
-          <property name="minimumSize">
-           <size>
-            <width>100</width>
-            <height>40</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>100</width>
-            <height>40</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QPushButton {
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
 	background: none;
 	background-color: #0c7b93;
 	border-radius: 10px;
@@ -361,13 +315,11 @@ QPushButton:pressed {
     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
                                       stop: 0 #0C5A76, stop: 1 #0c7b93);
 }</string>
-          </property>
-          <property name="text">
-           <string>Sign In</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
+        </property>
+        <property name="text">
+         <string>Sign In</string>
+        </property>
+       </widget>
       </item>
      </layout>
     </widget>
