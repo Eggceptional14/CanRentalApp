@@ -27,11 +27,11 @@ class Ui_login_widget(object):
         sizePolicy.setHeightForWidth(login_widget.sizePolicy().hasHeightForWidth())
         login_widget.setSizePolicy(sizePolicy)
         login_widget.setMinimumSize(QSize(700, 500))
-        login_widget.setMaximumSize(QSize(700, 500))
+        login_widget.setMaximumSize(QSize(650, 450))
         login_widget.setAcceptDrops(False)
-        login_widget.setStyleSheet(u"QWidget {\n"  
-"   background-color: #393e46;\n"                            
+        login_widget.setStyleSheet(u"QWidget {\n"
 "	background-image: url(:/login/login_background.png);\n"
+"	background-position: center;\n"
 "}\n"
 "\n"
 "QFrame {\n"
@@ -158,32 +158,6 @@ class Ui_login_widget(object):
 
         self.verticalLayout_3.addWidget(self.password_field)
 
-        self.horizontalLayout = QHBoxLayout()
-#ifndef Q_OS_MAC
-        self.horizontalLayout.setSpacing(-1)
-#endif
-        self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.horizontalLayout.setSizeConstraint(QLayout.SetMinimumSize)
-        self.horizontalLayout.setContentsMargins(0, -1, -1, -1)
-        self.pushButton = QPushButton(self.login_frame)
-        self.pushButton.setObjectName(u"pushButton")
-        self.pushButton.setMinimumSize(QSize(150, 40))
-        self.pushButton.setMaximumSize(QSize(150, 40))
-        font4 = QFont()
-        font4.setPointSize(14)
-        self.pushButton.setFont(font4)
-        self.pushButton.setStyleSheet(u"QPushButton {\n"
-"	background: none;\n"
-"	border: none;\n"
-"	color: rgb(50, 50, 50);\n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"	color: rgb(17, 135, 157);\n"
-"}")
-
-        self.horizontalLayout.addWidget(self.pushButton)
-
         self.signin_button = QPushButton(self.login_frame)
         self.signin_button.setObjectName(u"signin_button")
         self.signin_button.setMinimumSize(QSize(100, 40))
@@ -203,12 +177,7 @@ class Ui_login_widget(object):
 "                                      stop: 0 #0C5A76, stop: 1 #0c7b93);\n"
 "}")
 
-        self.horizontalLayout.addWidget(self.signin_button)
-
-        self.horizontalLayout.setStretch(0, 1)
-        self.horizontalLayout.setStretch(1, 1)
-
-        self.verticalLayout_3.addLayout(self.horizontalLayout)
+        self.verticalLayout_3.addWidget(self.signin_button, 0, Qt.AlignRight)
 
         self.verticalLayout_3.setStretch(1, 1)
         self.verticalLayout_3.setStretch(2, 1)
@@ -235,7 +204,6 @@ class Ui_login_widget(object):
         self.username_field.setPlaceholderText(QCoreApplication.translate("login_widget", u"Username", None))
         self.password_field.setText("")
         self.password_field.setPlaceholderText(QCoreApplication.translate("login_widget", u"Password", None))
-        self.pushButton.setText(QCoreApplication.translate("login_widget", u"Forgot Password", None))
         self.signin_button.setText(QCoreApplication.translate("login_widget", u"Sign In", None))
     # retranslateUi
 
