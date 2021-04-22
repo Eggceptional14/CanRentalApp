@@ -50,13 +50,14 @@ class Signup(QWidget):
                 self.showdialog("There was an error in your input. Please try again.", warning_message)
             else:
                 self.createUser(self.ui.username_field.text(), self.ui.password_field.text(), self.ui.email_field.text(), self.ui.contact_field.text(), self.ui.card_field.text())
+                self.close()
     
     def validateUsername(self):
         name = self.ui.username_field.text()
 
         conn = None
         try:
-            conn = sqlite3.connect("userInfo.db")
+            conn = sqlite3.connect("../db/userInfo.db")
             cur = conn.cursor()
             cur.execute("SELECT * FROM userInformation WHERE userName=?", (name,))
             rows = cur.fetchall()
@@ -90,7 +91,7 @@ class Signup(QWidget):
     
     def createUser(self, username, password, email, contact, creditCard):
         try:
-            sqliteConnection = sqlite3.connect("userInfo.db")
+            sqliteConnection = sqlite3.connect("../db/userInfo.db")
             cursor = sqliteConnection.cursor()
             print("Connected to SQLite")
 
