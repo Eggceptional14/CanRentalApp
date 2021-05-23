@@ -1,6 +1,9 @@
 <RCC>
   <qresource prefix="login">
     <file>login_background.png</file>
-    <file>images.qrc</file>
+  </qresource>
+  <qresource prefix="catalog">
+    <file>shopping-cart-white.png</file>
+    <file>shopping-cart.png</file>
   </qresource>
 </RCC>
