@@ -30,6 +30,7 @@ class Ui_login_widget(object):
         login_widget.setMaximumSize(QSize(650, 450))
         login_widget.setAcceptDrops(False)
         login_widget.setStyleSheet(u"QWidget {\n"
+"	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(31, 95, 139, 255), stop:0.364532 rgba(24, 145, 172, 255), stop:1 rgba(17, 127, 130, 255));\n"
 "	background-image: url(:/login/login_background.png);\n"
 "	background-position: center;\n"
 "}\n"
@@ -89,7 +90,7 @@ class Ui_login_widget(object):
         self.signup_button.setStyleSheet(u"QPushButton {\n"
 "	background: none;\n"
 "	border: none;\n"
-"	color: rgb(17, 135, 157);\n"
+"	color: white;\n"
 "	text-align: right;\n"
 "	padding-right: 50px;\n"
 "}\n"
