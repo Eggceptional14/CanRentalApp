@@ -2,7 +2,7 @@ import sys
 from PySide6.QtWidgets import *
 from PySide6.QtCore import *
 from PySide6.QtGui import *
-from catalog_page import Ui_Form
+from gui.catalog_page import Ui_Form
 from src.CarCatalog import CarCatalog
 
 import sqlite3
