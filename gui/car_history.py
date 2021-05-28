@@ -1,12 +1,9 @@
 import sys
 from PySide6 import QtWidgets
 from PySide6.QtWidgets import *
-from PySide6.QtCore import *
-from PySide6.QtGui import *
-from car_history_page import Ui_CarHistory
+from gui.car_history_page import Ui_CarHistory
 
 import sqlite3
-from sqlite3 import Error
 
 
 class CarHistory(QWidget):
@@ -18,7 +15,7 @@ class CarHistory(QWidget):
     
     def loadData(self):
         try:
-            sqliteConnection = sqlite3.connect("userHistory.db")
+            sqliteConnection = sqlite3.connect("../db/userHistory.db")
             print("Connected to SQLite")
 
             sqlite_select_query = "SELECT * from userHistory"

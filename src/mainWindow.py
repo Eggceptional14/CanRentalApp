@@ -2,8 +2,8 @@ import sys
 from PySide6.QtWidgets import *
 from PySide6.QtCore import *
 from PySide6.QtGui import *
-from login import Login
-from signup import Signup
+from gui.login import Login
+from gui.signup import Signup
 
 import sqlite3
 from sqlite3 import Error
@@ -15,6 +15,6 @@ class MainWindow(QMainWindow):
         self.login.ui.signup_button.clicked.connect(self.register)
         self.setCentralWidget(self.login)
         self.signup = Signup()
-    
+
     def register(self):
         self.signup.show()

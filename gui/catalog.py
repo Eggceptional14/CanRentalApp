@@ -3,6 +3,7 @@ from PySide6.QtWidgets import *
 from PySide6.QtCore import *
 from PySide6.QtGui import *
 from catalog_page import Ui_Form
+from src.CarCatalog import CarCatalog
 
 import sqlite3
 from sqlite3 import Error
