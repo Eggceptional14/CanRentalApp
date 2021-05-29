@@ -411,13 +411,13 @@ padding-top: 1px;</string>
          <property name="minimumSize">
           <size>
            <width>820</width>
-           <height>600</height>
+           <height>580</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
            <width>820</width>
-           <height>600</height>
+           <height>580</height>
           </size>
          </property>
          <property name="styleSheet">
