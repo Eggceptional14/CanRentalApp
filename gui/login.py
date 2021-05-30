@@ -2,6 +2,8 @@ import sys
 from PySide6.QtWidgets import *
 from PySide6.QtCore import *
 from PySide6.QtGui import *
+from PySide6 import QtCore
+
 from gui.login_page import Ui_login_widget
 
 import sqlite3
@@ -58,6 +60,7 @@ class Login(QWidget):
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     w = Login()
+    w.setAttribute(QtCore.Qt.WA_StyledBackground)
     w.show()
     sys.exit(app.exec_())
 
