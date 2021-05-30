@@ -50,7 +50,35 @@ class Ui_Form(object):
 "	color: #323232;\n"
 "	padding: 1px;\n"
 "}\n"
-"")
+"\n"
+"QScrollArea {\n"
+"	border: none;\n"
+"}\n"
+"\n"
+"QScrollBar:horizontal {\n"
+"     height: 18px;\n"
+"     margin: 3px 15px 3px 15px;\n"
+"     border: 1px transparent #2A2929;\n"
+"     border-radius: 6px;\n"
+"     background-color: white;   \n"
+" }\n"
+"\n"
+"QScrollBar::handle:horizontal {\n"
+"	border: 1px solid rgb(21, 139,"
+                        " 142);\n"
+"	border-radius: 6px;\n"
+"	background-color: rgb(21, 139, 142);\n"
+"}\n"
+"\n"
+"QScrollBar::add-line:horizontal {\n"
+"      border: none;\n"
+"      background: none;\n"
+"}\n"
+"\n"
+"QScrollBar::sub-line:horizontal {\n"
+"      border: none;\n"
+"      background: none;\n"
+"}")
         self.verticalLayout = QVBoxLayout(Form)
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.verticalLayout.setContentsMargins(10, 10, 10, 10)
@@ -213,51 +241,24 @@ class Ui_Form(object):
 
         self.scrollArea = QScrollArea(Form)
         self.scrollArea.setObjectName(u"scrollArea")
-        self.scrollArea.setMinimumSize(QSize(820, 600))
-        self.scrollArea.setMaximumSize(QSize(820, 600))
-        self.scrollArea.setStyleSheet(u"QScrollArea {\n"
-"	border: none;\n"
-"}\n"
-"\n"
-"QWidget {\n"
+        self.scrollArea.setMinimumSize(QSize(820, 580))
+        self.scrollArea.setMaximumSize(QSize(820, 580))
+        self.scrollArea.setStyleSheet(u"QWidget {\n"
 "	background-color: white;\n"
 "	border: solid;\n"
 "	border-width: 2px;\n"
 "	border-color: white;\n"
 "	border-radius: 20px;\n"
-"}\n"
-"\n"
-"QScrollBar:horizontal {\n"
-"     height: 18px;\n"
-"     margin: 3px 15px 3px 15px;\n"
-"     border: 1px transparent #2A2929;\n"
-"     border-radius: 6px;\n"
-"     background-color: white;   \n"
-" }\n"
-"\n"
-"QScrollBar::handle:horizontal {\n"
-"	border: 1px transparent rgb(21, 139, 142);\n"
-"	border-radius: 6px;\n"
-"	background-color: rgb(21, 139, 142);\n"
-"}\n"
-"\n"
-"QScrollBar::add-line:horizontal {\n"
-"      border: none;\n"
-"      background: none;\n"
-"}\n"
-"\n"
-"QScrollBar::sub-line:horizontal {\n"
-"      border: none;\n"
-"      background: none;\n"
 "}")
         self.scrollArea.setFrameShadow(QFrame.Sunken)
         self.scrollArea.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-        self.scrollArea.setHorizontalScrollBarPolicy(Qt.ScrollBarAsNeeded)
-        self.scrollArea.setWidgetResizable(True)
-        self.scrollArea.setAlignment(Qt.AlignBottom|Qt.AlignRight|Qt.AlignTrailing)
+        self.scrollArea.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOn)
+        self.scrollArea.setSizeAdjustPolicy(QAbstractScrollArea.AdjustToContents)
+        self.scrollArea.setWidgetResizable(False)
+        self.scrollArea.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 850, 600))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, -60, 850, 600))
         self.scrollAreaWidgetContents.setMinimumSize(QSize(850, 600))
         self.scrollAreaWidgetContents.setMaximumSize(QSize(850, 600))
         self.scrollAreaWidgetContents.setStyleSheet(u"")

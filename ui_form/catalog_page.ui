@@ -50,7 +50,34 @@ QLineEdit {
 	color: #323232;
 	padding: 1px;
 }
-</string>
+
+QScrollArea {
+	border: none;
+}
+
+QScrollBar:horizontal {
+     height: 18px;
+     margin: 3px 15px 3px 15px;
+     border: 1px transparent #2A2929;
+     border-radius: 6px;
+     background-color: white;   
+ }
+
+QScrollBar::handle:horizontal {
+	border: 1px solid rgb(21, 139, 142);
+	border-radius: 6px;
+	background-color: rgb(21, 139, 142);
+}
+
+QScrollBar::add-line:horizontal {
+      border: none;
+      background: none;
+}
+
+QScrollBar::sub-line:horizontal {
+      border: none;
+      background: none;
+}</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="leftMargin">
@@ -421,40 +448,12 @@ padding-top: 1px;</string>
           </size>
          </property>
          <property name="styleSheet">
-          <string notr="true">QScrollArea {
-	border: none;
-}
-
-QWidget {
+          <string notr="true">QWidget {
 	background-color: white;
 	border: solid;
 	border-width: 2px;
 	border-color: white;
 	border-radius: 20px;
-}
-
-QScrollBar:horizontal {
-     height: 18px;
-     margin: 3px 15px 3px 15px;
-     border: 1px transparent #2A2929;
-     border-radius: 6px;
-     background-color: white;   
- }
-
-QScrollBar::handle:horizontal {
-	border: 1px transparent rgb(21, 139, 142);
-	border-radius: 6px;
-	background-color: rgb(21, 139, 142);
-}
-
-QScrollBar::add-line:horizontal {
-      border: none;
-      background: none;
-}
-
-QScrollBar::sub-line:horizontal {
-      border: none;
-      background: none;
 }</string>
          </property>
          <property name="frameShadow">
@@ -464,19 +463,22 @@ QScrollBar::sub-line:horizontal {
           <enum>Qt::ScrollBarAlwaysOff</enum>
          </property>
          <property name="horizontalScrollBarPolicy">
-          <enum>Qt::ScrollBarAsNeeded</enum>
+          <enum>Qt::ScrollBarAlwaysOn</enum>
+         </property>
+         <property name="sizeAdjustPolicy">
+          <enum>QAbstractScrollArea::AdjustToContents</enum>
          </property>
          <property name="widgetResizable">
-          <bool>true</bool>
+          <bool>false</bool>
          </property>
          <property name="alignment">
-          <set>Qt::AlignBottom|Qt::AlignRight|Qt::AlignTrailing</set>
+          <set>Qt::AlignHCenter|Qt::AlignTop</set>
          </property>
          <widget class="QWidget" name="scrollAreaWidgetContents">
           <property name="geometry">
            <rect>
             <x>0</x>
-            <y>0</y>
+            <y>-60</y>
             <width>850</width>
             <height>600</height>
            </rect>

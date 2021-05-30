@@ -16,8 +16,7 @@ class Catalog(QWidget):
         self.ui = Ui_Form()
         self.ui.setupUi(self)
 
-        self.vbox = QVBoxLayout()
-        self.hBox = QHBoxLayout()
+        self.hBox = QHBoxLayout(self.ui.scrollAreaWidgetContents)
         self.carCatalog = CarCatalog()
         self.carList = self.carCatalog.getList()
         for car in self.carList:
@@ -26,14 +25,14 @@ class Catalog(QWidget):
                 print(car)
                 self.hBox.addWidget(description)
 
-        self.vbox.addItem(self.hBox)
-        verticalSpacer = QSpacerItem(20, 80)
-        self.vbox.addSpacerItem(verticalSpacer)
         self.ui.scrollAreaWidgetContents.setLayout(self.hBox)
+        self.ui.scrollArea.verticalScrollBar().setEnabled(False)
+        self.ui.scrollArea.horizontalScrollBar().setEnabled(True)
 
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     w = Catalog()
+    w.setAttribute(Qt.WA_StyledBackground)
     w.show()
     sys.exit(app.exec_())
