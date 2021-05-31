@@ -16,7 +16,7 @@ class Catalog(QWidget):
         self.ui = Ui_Form()
         self.ui.setupUi(self)
 
-        self.hBox = QHBoxLayout(self.ui.scrollAreaWidgetContents)
+        self.hBox = QHBoxLayout()
         self.carCatalog = CarCatalog()
         self.carList = self.carCatalog.getList()
         for car in self.carList:
@@ -25,7 +25,11 @@ class Catalog(QWidget):
                 print(car)
                 self.hBox.addWidget(description)
 
-        self.ui.scrollAreaWidgetContents.setLayout(self.hBox)
+        self.scrollAreaWidget = QWidget()
+        self.scrollAreaWidget.setLayout(self.hBox)
+
+        self.ui.scrollArea.setWidget(self.scrollAreaWidget)
+        self.ui.scrollArea.setWidgetResizable(True)
         self.ui.scrollArea.verticalScrollBar().setEnabled(False)
         self.ui.scrollArea.horizontalScrollBar().setEnabled(True)
 
