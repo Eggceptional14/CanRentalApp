@@ -56,17 +56,15 @@ class Ui_Form(object):
 "}\n"
 "\n"
 "QScrollBar:horizontal {\n"
-"     height: 18px;\n"
-"     margin: 3px 15px 3px 15px;\n"
-"     border: 1px transparent #2A2929;\n"
-"     border-radius: 6px;\n"
+"     height: 16px;\n"
+"     border: none;\n"
+"     border-radius: 8px;\n"
 "     background-color: grey;   \n"
 " }\n"
 "\n"
 "QScrollBar::handle:horizontal {\n"
-"	background-color: white;\n"
-"	border: 1px solid white;\n"
-"	border-radius: 6px;\n"
+"     min-width: 16px;\n"
+"     background-color: blue;\n"
 "}\n"
 "\n"
 "QScrollBar::add-line:horizontal {\n"
@@ -77,7 +75,14 @@ class Ui_Form(object):
 "QScrollBar::sub-line:horizontal {\n"
 "      border: none;\n"
 "      background: none;\n"
-"}")
+"}"
+"QScrollbar::left - arrow: horizontal, QScrollBar::right - arrow: horizontal {\n"
+"      background: none;\n"
+"}\n"
+"\n"
+"QScrollBar::add - page: horizontal, QScrollBar::sub - page: horizontal {\n"
+"background: none;\n"
+"}\n"   )
         self.verticalLayout = QVBoxLayout(Form)
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.verticalLayout.setContentsMargins(10, 10, 10, 10)
@@ -253,7 +258,7 @@ class Ui_Form(object):
         self.scrollArea.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
         self.scrollArea.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOn)
         self.scrollArea.setSizeAdjustPolicy(QAbstractScrollArea.AdjustToContents)
-        self.scrollArea.setWidgetResizable(False)
+        self.scrollArea.setWidgetResizable(True)
         self.scrollArea.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")

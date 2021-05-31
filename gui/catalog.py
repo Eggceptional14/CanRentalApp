@@ -10,6 +10,7 @@ from gui.car_description import CarDescription
 import sqlite3
 from sqlite3 import Error
 
+
 class Catalog(QWidget):
     def __init__(self):
         QWidget.__init__(self, None)
@@ -27,11 +28,7 @@ class Catalog(QWidget):
 
         self.scrollAreaWidget = QWidget()
         self.scrollAreaWidget.setLayout(self.hBox)
-
         self.ui.scrollArea.setWidget(self.scrollAreaWidget)
-        self.ui.scrollArea.setWidgetResizable(True)
-        self.ui.scrollArea.verticalScrollBar().setEnabled(False)
-        self.ui.scrollArea.horizontalScrollBar().setEnabled(True)
 
 
 if __name__ == '__main__':
