@@ -35,6 +35,49 @@ class CarCatalog:
     def addCar(self, car):
         self.carList.append(car)
 
+    def getBrandList(self):
+        brand = set()
+        try:
+            sqliteConnection = sqlite3.connect("../db/carCatalog.db")
+            print("Connected to SQLite")
+
+            sqlite_select_query = "SELECT * from carCatalog"
+            result = sqliteConnection.execute(sqlite_select_query)
+            for row in result:
+                # print(row)
+                brand.add(row[2])
+
+        except sqlite3.Error as error:
+            print("Failed to read data from sqlite table", error)
+        finally:
+            if sqliteConnection:
+                sqliteConnection.close()
+                print("The SQLite connection is closed")
+
+        return brand
+
+    def getCarTypeList(self):
+        carType = set()
+
+        try:
+            sqliteConnection = sqlite3.connect("../db/carCatalog.db")
+            print("Connected to SQLite")
+
+            sqlite_select_query = "SELECT * from carCatalog"
+            result = sqliteConnection.execute(sqlite_select_query)
+            for row in result:
+                # print(row)
+                carType.add(row[4])
+
+        except sqlite3.Error as error:
+            print("Failed to read data from sqlite table", error)
+        finally:
+            if sqliteConnection:
+                sqliteConnection.close()
+                print("The SQLite connection is closed")
+
+        return carType
+
     def deleteCar(self, car):
         self.carList.remove(car)
 
@@ -42,7 +85,33 @@ class CarCatalog:
         for i in self.carList:
             print(i)
 
+    def brandFilter(self, carFilter):
+        carList = set()
+        if carFilter == "Any":
+            carList = set(self.carList)
+        for car in self.carList:
+            if carFilter == car.getBrand():
+                carList.add(car)
+        return carList
+
+    def typeFilter(self, carFilter):
+        carList = set()
+        if carFilter == "Any":
+            carList = set(self.carList)
+        for car in self.carList:
+            if carFilter == car.getCarType():
+                carList.add(car)
+        return carList
+
+    def setPriceRange(self, priceRange):
+        carList = set()
+        for car in self.carList:
+            if priceRange[0] < car.getPrice() < priceRange[1]:
+                carList.add(car)
+        return carList
 
 if __name__ == '__main__':
     c = CarCatalog()
     c.displayCar()
+    print(c.getBrandList())
+    print(c.getCarTypeList())
