@@ -33,7 +33,26 @@ class Ui_Form(object):
 "	background: none;\n"
 "	background-color: white;\n"
 "	border-radius: 10px;\n"
-"	color: white;\n"
+"	color: #1D9AAE;\n"
+"   padding-top: 0px;"
+"   padding-bottom: 0px;"     
+"}\n"
+"\n""QComboBox QAbstractItemView{\n"
+"	color: #1D9AAE;\n"
+"   font: 16px;"
+"	background: none;\n"
+"	background-color: white;\n"
+"	border-radius: 10px;\n"
+"   padding-left: 4px;\n"                           
+"}\n"
+"\n"
+"QAbstractItemView::item:hover{\n"
+"	background: none;\n"
+"	background-color: grey;\n"                   
+"}\n"
+"\n"
+"QAbstractItemView::item{\n"
+"   margin: 5px;"                  
 "}\n"
 "\n"
 "QComboBox::drop-down {\n"
@@ -41,6 +60,15 @@ class Ui_Form(object):
 "	border: none;\n"
 "	border-top-right-radius: 10px;\n"
 "	border-bottom-right-radius: 10px;\n"
+"}\n"
+"\n"
+"QComboBox::down-arrow { \n"
+"	image: url(:/catalog/down arrow.png);\n"
+"}\n"
+"\n"
+"QComboBox::down-arrow:on { \n"
+"    top: 1px;\n"
+"    left: 1px;\n"
 "}\n"
 "\n"
 "QLineEdit {\n"
@@ -98,14 +126,14 @@ class Ui_Form(object):
 
         self.horizontalLayout_4.addWidget(self.label)
 
-        self.pushButton = QPushButton(Form)
-        self.pushButton.setObjectName(u"pushButton")
-        self.pushButton.setMinimumSize(QSize(80, 80))
-        self.pushButton.setMaximumSize(QSize(80, 80))
+        self.checkoutBtn = QPushButton(Form)
+        self.checkoutBtn.setObjectName(u"checkoutBtn")
+        self.checkoutBtn.setMinimumSize(QSize(80, 80))
+        self.checkoutBtn.setMaximumSize(QSize(80, 80))
         font1 = QFont()
         font1.setPointSize(16)
-        self.pushButton.setFont(font1)
-        self.pushButton.setStyleSheet(u"QPushButton {\n"
+        self.checkoutBtn.setFont(font1)
+        self.checkoutBtn.setStyleSheet(u"QPushButton {\n"
 "	background: none;\n"
 "	background-color: transparent;\n"
 "	padding: 0px;\n"
@@ -118,9 +146,9 @@ class Ui_Form(object):
 "	padding: 0px;\n"
 "	image: url(:/catalog/shopping-cart.png);\n"
 "}")
-        self.pushButton.setIconSize(QSize(20, 20))
+        self.checkoutBtn.setIconSize(QSize(20, 20))
 
-        self.horizontalLayout_4.addWidget(self.pushButton)
+        self.horizontalLayout_4.addWidget(self.checkoutBtn)
 
         self.horizontalSpacer = QSpacerItem(20, 20, QSizePolicy.Fixed, QSizePolicy.Minimum)
 
@@ -168,15 +196,15 @@ class Ui_Form(object):
 
         self.verticalLayout_4.addWidget(self.label_3, 0, Qt.AlignTop)
 
-        self.comboBox = QComboBox(Form)
-        self.comboBox.setObjectName(u"comboBox")
-        self.comboBox.setMinimumSize(QSize(0, 50))
-        self.comboBox.setMaximumSize(QSize(16777215, 50))
+        self.brandComboBox = QComboBox(Form)
+        self.brandComboBox.setObjectName(u"brandComboBox")
+        self.brandComboBox.setMinimumSize(QSize(0, 50))
+        self.brandComboBox.setMaximumSize(QSize(16777215, 50))
         font4 = QFont()
         font4.setPointSize(18)
-        self.comboBox.setFont(font4)
+        self.brandComboBox.setFont(font4)
 
-        self.verticalLayout_4.addWidget(self.comboBox, 0, Qt.AlignTop)
+        self.verticalLayout_4.addWidget(self.brandComboBox, 0, Qt.AlignTop)
 
         self.label_4 = QLabel(Form)
         self.label_4.setObjectName(u"label_4")
@@ -189,12 +217,12 @@ class Ui_Form(object):
 
         self.verticalLayout_4.addWidget(self.label_4, 0, Qt.AlignTop)
 
-        self.comboBox_2 = QComboBox(Form)
-        self.comboBox_2.setObjectName(u"comboBox_2")
-        self.comboBox_2.setMinimumSize(QSize(0, 50))
-        self.comboBox_2.setMaximumSize(QSize(16777215, 50))
+        self.typeComboBox = QComboBox(Form)
+        self.typeComboBox.setObjectName(u"typeComboBox")
+        self.typeComboBox.setMinimumSize(QSize(0, 50))
+        self.typeComboBox.setMaximumSize(QSize(16777215, 50))
 
-        self.verticalLayout_4.addWidget(self.comboBox_2, 0, Qt.AlignTop)
+        self.verticalLayout_4.addWidget(self.typeComboBox, 0, Qt.AlignTop)
 
         self.label_5 = QLabel(Form)
         self.label_5.setObjectName(u"label_5")
@@ -208,12 +236,12 @@ class Ui_Form(object):
         self.horizontalLayout = QHBoxLayout()
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.horizontalLayout.setContentsMargins(-1, -1, -1, 0)
-        self.lineEdit = QLineEdit(Form)
-        self.lineEdit.setObjectName(u"lineEdit")
-        self.lineEdit.setMaximumSize(QSize(16777215, 50))
-        self.lineEdit.setAlignment(Qt.AlignCenter)
+        self.priceFrom = QLineEdit(Form)
+        self.priceFrom.setObjectName(u"priceFrom")
+        self.priceFrom.setMaximumSize(QSize(16777215, 50))
+        self.priceFrom.setAlignment(Qt.AlignCenter)
 
-        self.horizontalLayout.addWidget(self.lineEdit)
+        self.horizontalLayout.addWidget(self.priceFrom)
 
         self.label_6 = QLabel(Form)
         self.label_6.setObjectName(u"label_6")
@@ -226,17 +254,46 @@ class Ui_Form(object):
 
         self.horizontalLayout.addWidget(self.label_6)
 
-        self.lineEdit_2 = QLineEdit(Form)
-        self.lineEdit_2.setObjectName(u"lineEdit_2")
-        self.lineEdit_2.setMaximumSize(QSize(16777215, 50))
-        self.lineEdit_2.setAlignment(Qt.AlignCenter)
+        self.priceTo = QLineEdit(Form)
+        self.priceTo.setObjectName(u"priceTo")
+        self.priceTo.setMaximumSize(QSize(16777215, 50))
+        self.priceTo.setAlignment(Qt.AlignCenter)
 
-        self.horizontalLayout.addWidget(self.lineEdit_2)
+        self.horizontalLayout.addWidget(self.priceTo)
 
 
         self.verticalLayout_4.addLayout(self.horizontalLayout)
 
-        self.verticalSpacer_2 = QSpacerItem(20, 150, QSizePolicy.Minimum, QSizePolicy.Fixed)
+        self.verticalSpacer_3 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Minimum)
+
+        self.verticalLayout_4.addItem(self.verticalSpacer_3)
+
+        self.setFilterBtn = QPushButton(Form)
+        self.setFilterBtn.setObjectName(u"setFilterBtn")
+        self.setFilterBtn.setMinimumSize(QSize(0, 50))
+        self.setFilterBtn.setMaximumSize(QSize(16777215, 50))
+        self.setFilterBtn.setStyleSheet(u"QPushButton {\n"
+"	font: bold;\n"
+"	font-size: 16px;\n"
+"	color: #1D9AAE;\n"
+"	border: none;\n"
+"	background-color: white;\n"
+"	border-radius: 10px;\n"
+"	padding: 0px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"	font: bold;\n"
+"	font-size: 16px;\n"
+"	color: white;\n"
+"	background-color: grey;\n"
+"	border-radius: 10px;\n"
+"	padding: 0px;\n"
+"}")
+
+        self.verticalLayout_4.addWidget(self.setFilterBtn)
+
+        self.verticalSpacer_2 = QSpacerItem(20, 10, QSizePolicy.Minimum, QSizePolicy.Minimum)
 
         self.verticalLayout_4.addItem(self.verticalSpacer_2)
 
@@ -285,14 +342,15 @@ class Ui_Form(object):
     def retranslateUi(self, Form):
         Form.setWindowTitle(QCoreApplication.translate("Form", u"Form", None))
         self.label.setText(QCoreApplication.translate("Form", u"<html><head/><body><p><span style=\" font-weight:700; color:#b6b8bc;\">Car</span><span style=\" color:#dfe2e6;\">Rental</span></p></body></html>", None))
-        self.pushButton.setText("")
+        self.checkoutBtn.setText("")
         self.label_2.setText(QCoreApplication.translate("Form", u"\u2630 Filter", None))
         self.label_3.setText(QCoreApplication.translate("Form", u"<html><head/><body><p><span style=\" color:#ffffff;\">Brand</span></p></body></html>", None))
-        self.comboBox.setPlaceholderText(QCoreApplication.translate("Form", u"Any", None))
+        self.brandComboBox.setPlaceholderText(QCoreApplication.translate("Form", u"Any", None))
         self.label_4.setText(QCoreApplication.translate("Form", u"<html><head/><body><p><span style=\" color:#ffffff;\">Car Type</span></p></body></html>", None))
-        self.comboBox_2.setPlaceholderText(QCoreApplication.translate("Form", u"Any", None))
+        self.typeComboBox.setPlaceholderText(QCoreApplication.translate("Form", u"Any", None))
         self.label_5.setText(QCoreApplication.translate("Form", u"<html><head/><body><p><span style=\" color:#ffffff;\">Price</span></p></body></html>", None))
-        self.lineEdit.setText(QCoreApplication.translate("Form", u"0", None))
+        self.priceFrom.setText(QCoreApplication.translate("Form", u"0", None))
         self.label_6.setText(QCoreApplication.translate("Form", u"<html><head/><body><p><span style=\" color:#ffffff;\">TO</span></p></body></html>", None))
+        self.setFilterBtn.setText(QCoreApplication.translate("Form", u"Set Filter", None))
     # retranslateUi
 
