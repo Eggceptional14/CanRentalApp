@@ -19,21 +19,105 @@ class Catalog(QWidget):
 
         self.hBox = QHBoxLayout()
         self.carCatalog = CarCatalog()
-        self.carList = self.carCatalog.getList()
-        for car in self.carList:
+
+        self.carList = self.createCarList(self.carCatalog.getList())
+        self.addCatalogItem(self.carList)
+
+        self.scrollAreaWidget = QWidget()
+        self.scrollAreaWidget.setLayout(self.hBox)
+        self.ui.scrollArea.setWidget(self.scrollAreaWidget)
+
+        self.ui.checkoutBtn.clicked.connect(self.checkout)
+        self.ui.setFilterBtn.clicked.connect(self.setFilter)
+
+        self.brandFilter = ""
+        self.typeFilter = ""
+        self.priceRange = []
+
+        self.rentedCarList = []
+
+        self.ui.brandComboBox.addItem("Any")
+        self.ui.typeComboBox.addItem("Any")
+        self.ui.brandComboBox.addItems(self.carCatalog.getBrandList())
+        self.ui.typeComboBox.addItems(self.carCatalog.getCarTypeList())
+
+    def createCarList(self, items):
+        carList = []
+        for item in items:
+            carList.append(item)
+        return carList
+
+    def addCatalogItem(self, items):
+        for car in items:
             if car.getAvailability() != 0:
                 description = CarDescription(car)
                 print(car)
                 self.hBox.addWidget(description)
 
-        self.scrollAreaWidget = QWidget()
-        self.scrollAreaWidget.setLayout(self.hBox)
-        self.ui.scrollArea.setWidget(self.scrollAreaWidget)
+    def updateCatalogItem(self):
+        carList = set()
+        brand = self.carCatalog.brandFilter(self.brandFilter)
+        carType = self.carCatalog.typeFilter(self.typeFilter)
+        priceRange = self.carCatalog.setPriceRange(self.priceRange)
+        carList = set(brand) & set(carType) & set(priceRange)
+
+        if len(carList) == 0:
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Critical)
+            msg.setText("Error: Invalid filters")
+            msg.setInformativeText("")
+            msg.setWindowTitle("Error")
+            msg.exec_()
+        else:
+            self.clearItems()
+            self.carList = carList
+            self.addCatalogItem(self.carList)
+            self.scrollAreaWidget.setLayout(self.hBox)
+    
+    def clearItems(self):
+        for i in reversed(range(self.hBox.count())):
+            self.hBox.itemAt(i).widget().setParent(None)
+
+    def checkout(self):
+        pass
+
+    def setFilter(self):
+
+        if self.ui.priceFrom.text().isdigit() and self.ui.priceTo.text().isdigit():
+            
+            if int(self.ui.priceFrom.text()) > int(self.ui.priceTo.text()):
+                msg = QMessageBox()
+                msg.setIcon(QMessageBox.Critical)
+                msg.setText("Error: Invalid price range entry.")
+                msg.setInformativeText("")
+                msg.setWindowTitle("Error")
+                msg.exec_()
+            else:
+                self.priceRange.append(int(self.ui.priceFrom.text()))
+                self.priceRange.append(int(self.ui.priceTo.text()))
+            # print(self.ui.priceFrom.text())
+            # print(self.ui.priceTo.text())
+        else:
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Critical)
+            msg.setText("Error: Price range carFilter only allowed integers.")
+            msg.setInformativeText("")
+            msg.setWindowTitle("Error")
+            msg.exec_()
+
+        self.brandFilter = self.ui.brandComboBox.currentText()
+        self.typeFilter = self.ui.typeComboBox.currentText()
+
+        # print(self.brandFilter)
+        # print(self.typeFilter)
+        self.updateCatalogItem()
+
 
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     w = Catalog()
     w.setAttribute(Qt.WA_StyledBackground)
+    w.setWindowTitle("CarRentalApp")
     w.show()
     sys.exit(app.exec_())
