@@ -4,8 +4,10 @@ from PySide6.QtCore import *
 from PySide6.QtGui import *
 
 from gui.catalog_page import Ui_Form
+
 from src.CarCatalog import CarCatalog
 from gui.car_description import CarDescription
+from gui.profile import Profile
 
 import sqlite3
 from sqlite3 import Error
@@ -28,7 +30,7 @@ class Catalog(QWidget):
         self.ui.scrollArea.setWidget(self.scrollAreaWidget)
 
         self.ui.checkoutBtn.clicked.connect(self.checkout)
-        self.ui.profileBtn.clicked.connect(self.profile)
+        self.ui.profileBtn.clicked.connect(self.showProfile)
         self.ui.setFilterBtn.clicked.connect(self.setFilter)
 
         self.brandFilter = ""
@@ -41,6 +43,9 @@ class Catalog(QWidget):
         self.ui.typeComboBox.addItem("Any")
         self.ui.brandComboBox.addItems(self.carCatalog.getBrandList())
         self.ui.typeComboBox.addItems(self.carCatalog.getCarTypeList())
+
+        self.profile = Profile()
+        self.profile.setAttribute(Qt.WA_StyledBackground)
 
     def createCarList(self, items):
         carList = []
@@ -59,8 +64,8 @@ class Catalog(QWidget):
         sender = self.sender()
         print(sender.text())
 
-    def profile(self):
-        print("profile")
+    def showProfile(self):
+        self.profile.show()
 
     def updateCatalogItem(self):
         carList = set()
