@@ -63,7 +63,7 @@ class Ui_Form(object):
 "}\n"
 "\n"
 "QComboBox::down-arrow { \n"
-"	image: url(:/catalog/down arrow.png);\n"
+"	image: url(:/catalog/none.png);\n"
 "}\n"
 "\n"
 "QComboBox::down-arrow:on { \n"
@@ -125,6 +125,30 @@ class Ui_Form(object):
         self.label.setStyleSheet(u"padding-left: 0px;")
 
         self.horizontalLayout_4.addWidget(self.label)
+
+        self.profileBtn = QPushButton(Form)
+        self.profileBtn.setObjectName(u"profileBtn")
+        self.profileBtn.setMinimumSize(QSize(80, 80))
+        self.profileBtn.setMaximumSize(QSize(80, 80))
+        self.profileBtn.setStyleSheet(u"QPushButton {\n"
+"	background: none;\n"
+"	background-color: transparent;\n"
+"	padding: 0px;\n"
+"	image: url(:/catalog/user-white.png);\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"	background: none;\n"
+"	background-color: transparent;\n"
+"	padding: 0px;\n"
+"	image: url(:/catalog/user.png);\n"
+"}")
+
+        self.horizontalLayout_4.addWidget(self.profileBtn)
+
+        self.horizontalSpacer_2 = QSpacerItem(20, 20, QSizePolicy.Maximum, QSizePolicy.Minimum)
+
+        self.horizontalLayout_4.addItem(self.horizontalSpacer_2)
 
         self.checkoutBtn = QPushButton(Form)
         self.checkoutBtn.setObjectName(u"checkoutBtn")
@@ -342,6 +366,7 @@ class Ui_Form(object):
     def retranslateUi(self, Form):
         Form.setWindowTitle(QCoreApplication.translate("Form", u"Form", None))
         self.label.setText(QCoreApplication.translate("Form", u"<html><head/><body><p><span style=\" font-weight:700; color:#b6b8bc;\">Car</span><span style=\" color:#dfe2e6;\">Rental</span></p></body></html>", None))
+        self.profileBtn.setText("")
         self.checkoutBtn.setText("")
         self.label_2.setText(QCoreApplication.translate("Form", u"\u2630 Filter", None))
         self.label_3.setText(QCoreApplication.translate("Form", u"<html><head/><body><p><span style=\" color:#ffffff;\">Brand</span></p></body></html>", None))

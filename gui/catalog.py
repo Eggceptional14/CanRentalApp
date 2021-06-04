@@ -28,6 +28,7 @@ class Catalog(QWidget):
         self.ui.scrollArea.setWidget(self.scrollAreaWidget)
 
         self.ui.checkoutBtn.clicked.connect(self.checkout)
+        self.ui.profileBtn.clicked.connect(self.profile)
         self.ui.setFilterBtn.clicked.connect(self.setFilter)
 
         self.brandFilter = ""
@@ -51,8 +52,16 @@ class Catalog(QWidget):
         for car in items:
             if car.getAvailability() != 0:
                 description = CarDescription(car)
-                print(car)
+                # print(car)
+                description.ui.rentButton.clicked.connect(self.rent)
                 self.hBox.addWidget(description)
+
+    def rent(self):
+        sender = self.sender()
+        print(sender.text())
+
+    def profile(self):
+        print("profile")
 
     def updateCatalogItem(self):
         carList = set()
@@ -63,10 +72,10 @@ class Catalog(QWidget):
 
         if len(carList) == 0:
             msg = QMessageBox()
-            msg.setIcon(QMessageBox.Critical)
-            msg.setText("Error: Invalid filters")
+            msg.setIcon(QMessageBox.info)
+            msg.setText("No Available Car")
             msg.setInformativeText("")
-            msg.setWindowTitle("Error")
+            msg.setWindowTitle("No Available Car")
             msg.exec_()
         else:
             self.clearItems()
