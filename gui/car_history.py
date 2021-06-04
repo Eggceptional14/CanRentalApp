@@ -15,7 +15,7 @@ class CarHistory(QWidget):
     
     def loadData(self):
         try:
-            sqliteConnection = sqlite3.connect("../db/userHistory.db")
+            sqliteConnection = sqlite3.connect("../db/rentalCar.db")
             print("Connected to SQLite")
 
             sqlite_select_query = "SELECT * from userHistory"
