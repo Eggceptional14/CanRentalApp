@@ -1,9 +1,7 @@
 import sys
 import re
 from PySide6.QtWidgets import *
-from PySide6.QtCore import *
-from PySide6.QtGui import *
-from gui.signup_page import Ui_Form
+from gui.link.signup_page import Ui_Form
 
 import sqlite3
 from sqlite3 import Error

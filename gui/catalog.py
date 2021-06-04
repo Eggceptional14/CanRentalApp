@@ -3,15 +3,11 @@ from PySide6.QtWidgets import *
 from PySide6.QtCore import *
 from PySide6.QtGui import *
 
-from gui.catalog_page import Ui_Form
+from gui.link.catalog_page import Ui_Form
 
 from src.CarCatalog import CarCatalog
 from gui.car_description import CarDescription
 from gui.profile import Profile
-from gui.checkout import Checkout
-
-import sqlite3
-from sqlite3 import Error
 
 
 class Catalog(QWidget):
@@ -45,6 +41,7 @@ class Catalog(QWidget):
         self.ui.typeComboBox.addItems(self.carCatalog.getCarTypeList())
 
         self.profile = Profile()
+
         self.profile.setAttribute(Qt.WA_StyledBackground)
 
     def createCarList(self, items):

@@ -1,12 +1,8 @@
 import sys
 from PySide6.QtWidgets import *
-from PySide6.QtCore import *
 from PySide6.QtGui import *
 
-from gui.checkout_ui import Ui_Form
-
-import sqlite3
-from sqlite3 import Error
+from gui.link.checkout_ui import Ui_Form
 
 
 class Checkout(QWidget):

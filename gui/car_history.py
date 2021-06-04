@@ -1,7 +1,7 @@
 import sys
 from PySide6 import QtWidgets
 from PySide6.QtWidgets import *
-from gui.car_history_page import Ui_CarHistory
+from gui.link.car_history_page import Ui_CarHistory
 
 import sqlite3
 

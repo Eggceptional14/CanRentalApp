@@ -1,10 +1,8 @@
 import sys
 from PySide6.QtWidgets import *
-from PySide6.QtCore import *
-from PySide6.QtGui import *
 from PySide6 import QtCore
 
-from gui.login_page import Ui_login_widget
+from gui.link.login_page import Ui_login_widget
 
 import sqlite3
 from sqlite3 import Error
