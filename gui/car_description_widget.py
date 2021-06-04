@@ -21,15 +21,18 @@ class Ui_CarDescription(object):
         CarDescription.setMinimumSize(QSize(390, 490))
         CarDescription.setMaximumSize(QSize(390, 490))
         CarDescription.setStyleSheet(u"QFrame{\n"
-"	background: grey;\n"
-"	border: 1px solid grey;\n"
+"	background-color: #DCDCDC;\n"
+"	border: none;\n"
 "	border-radius: 30px;\n"
 "	padding: 0px;\n"
 "}\n"
 "\n"
 "QLabel {\n"
-"	color: #323232;\n"
-"}")
+"	font-weight: bold;\n"
+"	color: #1891ac;\n"
+"}\n"
+"\n"
+"")
         self.verticalLayout = QVBoxLayout(CarDescription)
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.frame = QFrame(CarDescription)
@@ -140,16 +143,16 @@ class Ui_CarDescription(object):
         self.rentButton.setMaximumSize(QSize(140, 50))
         self.rentButton.setStyleSheet(u"QPushButton {\n"
 "	color: white;\n"
-"	background-color: #323232;\n"
-"	border-color: grey;\n"
+"	background-color: #9C9C9C;\n"
+"	border-color: #9C9C9C;\n"
 "	border-radius: 10px;\n"
 "	padding: 0px;\n"
 "}\n"
 "\n"
 "QPushButton:pressed {\n"
 "	color: white;\n"
-"	background-color: #232323;\n"
-"	border-color: grey;\n"
+"	background-color: #B5B5B5;\n"
+"	border-color: #B5B5B5;\n"
 "	border-radius: 10px;\n"
 "	padding: 0px;\n"
 "}")
