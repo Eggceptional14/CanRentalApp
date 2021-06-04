@@ -51,7 +51,7 @@ class CarItem:
         self.availability = availability
     
     def __str__(self):
-        return f'Car: {self.carId, self.carType} Price: {self.price} Availability: {self.availability}'
+        return f'Car: {self.brand}, { self.model} Price: {self.price} Availability: {self.availability}'
 
 
 
