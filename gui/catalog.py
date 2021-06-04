@@ -30,7 +30,6 @@ class Catalog(QWidget):
         self.scrollAreaWidget.setLayout(self.hBox)
         self.ui.scrollArea.setWidget(self.scrollAreaWidget)
 
-        self.ui.checkoutBtn.clicked.connect(self.checkout)
         self.ui.profileBtn.clicked.connect(self.showProfile)
         self.ui.setFilterBtn.clicked.connect(self.setFilter)
 
@@ -48,9 +47,6 @@ class Catalog(QWidget):
         self.profile = Profile()
         self.profile.setAttribute(Qt.WA_StyledBackground)
 
-        self.checkoutPage = Checkout()
-        self.checkoutPage.setAttribute(Qt.WA_StyledBackground)
-
     def createCarList(self, items):
         carList = []
         for item in items:
@@ -61,12 +57,7 @@ class Catalog(QWidget):
         for car in items:
             description = CarDescription(car)
             # print(car)
-            description.ui.rentButton.clicked.connect(self.rent)
             self.hBox.addWidget(description)
-
-    def rent(self):
-        sender = self.sender()
-        print(sender.text())
 
     def showProfile(self):
         self.profile.show()
@@ -90,13 +81,11 @@ class Catalog(QWidget):
             self.carList = carList
             self.addCatalogItem(self.carList)
             self.scrollAreaWidget.setLayout(self.hBox)
+
     
     def clearItems(self):
         for i in reversed(range(self.hBox.count())):
             self.hBox.itemAt(i).widget().setParent(None)
-
-    def checkout(self):
-        self.checkoutPage.show()
 
     def setFilter(self):
 
