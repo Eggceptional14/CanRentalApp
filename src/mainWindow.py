@@ -12,6 +12,7 @@ class MainWindow(QMainWindow):
     def __init__(self):
         QMainWindow.__init__(self, None)
         self.login = Login()
+        self.login.setAttribute(Qt.WA_StyledBackground)
         self.login.ui.signup_button.clicked.connect(self.register)
         self.setCentralWidget(self.login)
         self.signup = Signup()

@@ -1,5 +1,7 @@
 import sys
 from PySide6.QtWidgets import *
+from PySide6 import QtCore
+
 from src.mainWindow import MainWindow
 
 
