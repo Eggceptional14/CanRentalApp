@@ -34,7 +34,7 @@ class Login(QWidget):
     def getPassword(self, name):
         conn = None
         try:
-            conn = sqlite3.connect("../db/userInfo.db")
+            conn = sqlite3.connect("../db/rentalCar.db")
             cur = conn.cursor()
             cur.execute("SELECT * FROM userInformation WHERE userName=?", (name,))
             rows = cur.fetchall()
