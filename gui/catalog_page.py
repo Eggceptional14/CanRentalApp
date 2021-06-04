@@ -150,33 +150,33 @@ class Ui_Form(object):
 
         self.horizontalLayout_4.addItem(self.horizontalSpacer_2)
 
-        self.checkoutBtn = QPushButton(Form)
-        self.checkoutBtn.setObjectName(u"checkoutBtn")
-        self.checkoutBtn.setMinimumSize(QSize(80, 80))
-        self.checkoutBtn.setMaximumSize(QSize(80, 80))
-        font1 = QFont()
-        font1.setPointSize(16)
-        self.checkoutBtn.setFont(font1)
-        self.checkoutBtn.setStyleSheet(u"QPushButton {\n"
-"	background: none;\n"
-"	background-color: transparent;\n"
-"	padding: 0px;\n"
-"	image: url(:/catalog/shopping-cart-white.png);\n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"	background: none;\n"
-"	background-color: transparent;\n"
-"	padding: 0px;\n"
-"	image: url(:/catalog/shopping-cart.png);\n"
-"}")
-        self.checkoutBtn.setIconSize(QSize(20, 20))
+#         self.checkoutBtn = QPushButton(Form)
+#         self.checkoutBtn.setObjectName(u"checkoutBtn")
+#         self.checkoutBtn.setMinimumSize(QSize(80, 80))
+#         self.checkoutBtn.setMaximumSize(QSize(80, 80))
+#         font1 = QFont()
+#         font1.setPointSize(16)
+#         self.checkoutBtn.setFont(font1)
+#         self.checkoutBtn.setStyleSheet(u"QPushButton {\n"
+# "	background: none;\n"
+# "	background-color: transparent;\n"
+# "	padding: 0px;\n"
+# "	image: url(:/catalog/shopping-cart-white.png);\n"
+# "}\n"
+# "\n"
+# "QPushButton:pressed {\n"
+# "	background: none;\n"
+# "	background-color: transparent;\n"
+# "	padding: 0px;\n"
+# "	image: url(:/catalog/shopping-cart.png);\n"
+# "}")
+#         self.checkoutBtn.setIconSize(QSize(20, 20))
 
-        self.horizontalLayout_4.addWidget(self.checkoutBtn)
+        # self.horizontalLayout_4.addWidget(self.checkoutBtn)
 
-        self.horizontalSpacer = QSpacerItem(20, 20, QSizePolicy.Fixed, QSizePolicy.Minimum)
+        # self.horizontalSpacer = QSpacerItem(20, 20, QSizePolicy.Fixed, QSizePolicy.Minimum)
 
-        self.horizontalLayout_4.addItem(self.horizontalSpacer)
+        # self.horizontalLayout_4.addItem(self.horizontalSpacer)
 
 
         self.verticalLayout.addLayout(self.horizontalLayout_4)
@@ -367,7 +367,7 @@ class Ui_Form(object):
         Form.setWindowTitle(QCoreApplication.translate("Form", u"Form", None))
         self.label.setText(QCoreApplication.translate("Form", u"<html><head/><body><p><span style=\" font-weight:700; color:#b6b8bc;\">Car</span><span style=\" color:#dfe2e6;\">Rental</span></p></body></html>", None))
         self.profileBtn.setText("")
-        self.checkoutBtn.setText("")
+        # self.checkoutBtn.setText("")
         self.label_2.setText(QCoreApplication.translate("Form", u"\u2630 Filter", None))
         self.label_3.setText(QCoreApplication.translate("Form", u"<html><head/><body><p><span style=\" color:#ffffff;\">Brand</span></p></body></html>", None))
         self.brandComboBox.setPlaceholderText(QCoreApplication.translate("Form", u"Any", None))
