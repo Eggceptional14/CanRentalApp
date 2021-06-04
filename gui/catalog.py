@@ -8,6 +8,7 @@ from gui.catalog_page import Ui_Form
 from src.CarCatalog import CarCatalog
 from gui.car_description import CarDescription
 from gui.profile import Profile
+from gui.checkout import Checkout
 
 import sqlite3
 from sqlite3 import Error
@@ -46,6 +47,9 @@ class Catalog(QWidget):
 
         self.profile = Profile()
         self.profile.setAttribute(Qt.WA_StyledBackground)
+
+        self.checkoutPage = Checkout()
+        self.checkoutPage.setAttribute(Qt.WA_StyledBackground)
 
     def createCarList(self, items):
         carList = []
@@ -92,7 +96,7 @@ class Catalog(QWidget):
             self.hBox.itemAt(i).widget().setParent(None)
 
     def checkout(self):
-        pass
+        self.checkoutPage.show()
 
     def setFilter(self):
 
