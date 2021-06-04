@@ -20,6 +20,10 @@ class Checkout(QWidget):
 
     def setChoosenCar(self, car):
         self.car = car
+        self.ui.brandLabel.setText(self.car.getBrand())
+        self.ui.typeLabel.setText(self.car.getCarType())
+        self.ui.modelLabel.setText(self.car.getCarModel())
+        self.ui.priceLabel.setText(str(self.car.getPrice()) + " ฿")
 
     def createOrder(self):
         print("Checkout")
