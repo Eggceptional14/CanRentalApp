@@ -11,7 +11,7 @@ class CarCatalog:
 
     def loadData(self):
         try:
-            sqliteConnection = sqlite3.connect("../db/carCatalog.db")
+            sqliteConnection = sqlite3.connect("../db/rentalCar.db")
             print("Connected to SQLite")
 
             sqlite_select_query = "SELECT * from carCatalog"
@@ -38,7 +38,7 @@ class CarCatalog:
     def getBrandList(self):
         brand = set()
         try:
-            sqliteConnection = sqlite3.connect("../db/carCatalog.db")
+            sqliteConnection = sqlite3.connect("../db/rentalCar.db")
             print("Connected to SQLite")
 
             sqlite_select_query = "SELECT * from carCatalog"
@@ -60,7 +60,7 @@ class CarCatalog:
         carType = set()
 
         try:
-            sqliteConnection = sqlite3.connect("../db/carCatalog.db")
+            sqliteConnection = sqlite3.connect("../db/rentalCar.db")
             print("Connected to SQLite")
 
             sqlite_select_query = "SELECT * from carCatalog"
