@@ -27,15 +27,18 @@
   </property>
   <property name="styleSheet">
    <string notr="true">QFrame{
-	background: grey;
-	border: 1px solid grey;
+	background-color: #DCDCDC;
+	border: none;
 	border-radius: 30px;
 	padding: 0px;
 }
 
 QLabel {
-	color: #323232;
-}</string>
+	font-weight: bold;
+	color: #1891ac;
+}
+
+</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -284,7 +287,7 @@ QLabel {
           <property name="styleSheet">
            <string notr="true">QPushButton {
 	color: white;
-	background-color: #323232;
+	background-color: #9C9C9C;
 	border-color: grey;
 	border-radius: 10px;
 	padding: 0px;
@@ -292,7 +295,7 @@ QLabel {
 
 QPushButton:pressed {
 	color: white;
-	background-color: #232323;
+	background-color: #B5B5B5;
 	border-color: grey;
 	border-radius: 10px;
 	padding: 0px;

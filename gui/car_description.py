@@ -16,16 +16,18 @@ class CarDescription(QWidget):
         QWidget.__init__(self, None)
         self.ui = Ui_CarDescription()
         self.ui.setupUi(self)
-        self.setInfo(car)
+        self.car = car
+        self.setInfo()
 
-    def setInfo(self, car):
-        image = QImage.fromData(car.getImage())
+    def setInfo(self):
+        image = QImage.fromData(self.car.getImage())
         pixmap = QPixmap().fromImage(image)
-        self.ui.label.setPixmap(pixmap)
-        self.ui.brandLabel.setText(str(car.getBrand()))
-        self.ui.modelLabel.setText(str(car.getCarModel()))
-        self.ui.typeLabel.setText(str(car.getCarType()))
-        self.ui.pphLabel.setText(str(car.getPrice()))
+        self.ui.label.setPixmap(pixmap.scaled(380, 280, Qt.KeepAspectRatio))
+        self.ui.label.setAlignment(Qt.AlignCenter)
+        self.ui.brandLabel.setText(str(self.car.getBrand()))
+        self.ui.modelLabel.setText(str(self.car.getCarModel()))
+        self.ui.typeLabel.setText(str(self.car.getCarType()))
+        self.ui.pphLabel.setText(str(self.car.getPrice()))
 
 
 if __name__ == '__main__':
