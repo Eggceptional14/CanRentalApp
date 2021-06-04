@@ -34,7 +34,7 @@ class CarItem:
     def getCarType(self):
         return self.carType
 
-    def setcarType(self, carType):
+    def setCarType(self, carType):
         self.carType = carType
 
     def getPrice(self):
