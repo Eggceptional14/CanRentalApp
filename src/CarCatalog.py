@@ -14,12 +14,12 @@ class CarCatalog:
             sqliteConnection = sqlite3.connect("../db/rentalCar.db")
             print("Connected to SQLite")
 
-            sqlite_select_query = "SELECT * from carCatalog"
+            sqlite_select_query = "SELECT * from carInformation"
             result = sqliteConnection.execute(sqlite_select_query)
             for row in result:
                 # print(row)
-                image, brand, id, model, carClass, pph, available = row[0], row[2], row[1], row[3], row[4], row[5], row[6]
-                car = CarItem(image, brand, id, model, carClass, pph, available)
+                carId, brand, model, carClass, pph, image = row[0], row[1], row[2], row[3], row[4], row[5]
+                car = CarItem(image, brand, carId, model, carClass, pph)
                 self.addCar(car)
 
         except sqlite3.Error as error:
@@ -41,11 +41,11 @@ class CarCatalog:
             sqliteConnection = sqlite3.connect("../db/rentalCar.db")
             print("Connected to SQLite")
 
-            sqlite_select_query = "SELECT * from carCatalog"
+            sqlite_select_query = "SELECT * from carInformation"
             result = sqliteConnection.execute(sqlite_select_query)
             for row in result:
                 # print(row)
-                brand.add(row[2])
+                brand.add(row[1])
 
         except sqlite3.Error as error:
             print("Failed to read data from sqlite table", error)
@@ -63,11 +63,11 @@ class CarCatalog:
             sqliteConnection = sqlite3.connect("../db/rentalCar.db")
             print("Connected to SQLite")
 
-            sqlite_select_query = "SELECT * from carCatalog"
+            sqlite_select_query = "SELECT * from carInformation"
             result = sqliteConnection.execute(sqlite_select_query)
             for row in result:
                 # print(row)
-                carType.add(row[4])
+                carType.add(row[3])
 
         except sqlite3.Error as error:
             print("Failed to read data from sqlite table", error)

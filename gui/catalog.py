@@ -50,11 +50,10 @@ class Catalog(QWidget):
 
     def addCatalogItem(self, items):
         for car in items:
-            if car.getAvailability() != 0:
-                description = CarDescription(car)
-                # print(car)
-                description.ui.rentButton.clicked.connect(self.rent)
-                self.hBox.addWidget(description)
+            description = CarDescription(car)
+            # print(car)
+            description.ui.rentButton.clicked.connect(self.rent)
+            self.hBox.addWidget(description)
 
     def rent(self):
         sender = self.sender()

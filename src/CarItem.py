@@ -1,12 +1,11 @@
 class CarItem:
-    def __init__(self, image, brand, carId, model,carType, price, availability):
+    def __init__(self, image, brand, carId, model,carType, price):
         self.image = image
         self.brand = brand
         self.carId = carId
         self.model = model
         self.carType = carType
         self.price = price
-        self.availability = availability
     
     def getImage(self):
         return self.image
@@ -44,14 +43,9 @@ class CarItem:
     def setPrice(self, price):
         self.price = price
 
-    def getAvailability(self):
-        return self.availability
-
-    def setAvailability(self, availability):
-        self.availability = availability
     
     def __str__(self):
-        return f'Car: {self.brand}, { self.model} Price: {self.price} Availability: {self.availability}'
+        return f'Car: {self.brand}, { self.model} Price: {self.price}'
 
 
 
