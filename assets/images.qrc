@@ -3,6 +3,8 @@
     <file>login_background.png</file>
   </qresource>
   <qresource prefix="catalog">
+    <file>user-white.png</file>
+    <file>user.png</file>
     <file>down arrow.png</file>
     <file>shopping-cart-white.png</file>
     <file>shopping-cart.png</file>
