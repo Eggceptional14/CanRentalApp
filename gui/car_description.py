@@ -4,8 +4,8 @@ from PySide6.QtCore import *
 from PySide6.QtGui import *
 
 from gui.car_description_widget import Ui_CarDescription
-from src.CarItem import CarItem
 from src.CarCatalog import CarCatalog
+from gui.checkout import Checkout
 
 import sqlite3
 from sqlite3 import Error
@@ -18,6 +18,14 @@ class CarDescription(QWidget):
         self.ui.setupUi(self)
         self.car = car
         self.setInfo()
+        self.history = Checkout()
+        self.ui.rentButton.clicked.connect(self.rentCar)
+
+    def rentCar(self):
+        self.history.setChoosenCar(self.car)
+        self.history.setAttribute(Qt.WA_StyledBackground)
+        self.history.show()
+        print(self.car)
 
     def setInfo(self):
         image = QImage.fromData(self.car.getImage())
