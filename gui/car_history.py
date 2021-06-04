@@ -18,7 +18,7 @@ class CarHistory(QWidget):
             sqliteConnection = sqlite3.connect("../db/rentalCar.db")
             print("Connected to SQLite")
 
-            sqlite_select_query = "SELECT * from userHistory"
+            sqlite_select_query = "SELECT * from reservationHistory"
             result = sqliteConnection.execute(sqlite_select_query)
             self.ui.tableWidget.setRowCount(0)
             for row_number, row_data in enumerate(result):
@@ -32,6 +32,8 @@ class CarHistory(QWidget):
             if sqliteConnection:
                 sqliteConnection.close()
                 print("The SQLite connection is closed")
+
+
 
 
 if __name__ == '__main__':
