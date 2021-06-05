@@ -139,6 +139,25 @@ class Ui_Form(object):
 
         self.verticalLayout.addLayout(self.horizontalLayout_3)
 
+        self.horizontalLayout_7 = QHBoxLayout()
+        self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
+        self.label_2 = QLabel(Form)
+        self.label_2.setObjectName(u"label_2")
+        self.label_2.setMaximumSize(QSize(90, 16777215))
+        self.label_2.setFont(font1)
+        self.label_2.setStyleSheet(u"font-weight: bold;")
+
+        self.horizontalLayout_7.addWidget(self.label_2)
+
+        self.contactLabel = QLabel(Form)
+        self.contactLabel.setObjectName(u"contactLabel")
+        self.contactLabel.setFont(font2)
+
+        self.horizontalLayout_7.addWidget(self.contactLabel)
+
+
+        self.verticalLayout.addLayout(self.horizontalLayout_7)
+
         self.horizontalLayout_4 = QHBoxLayout()
         self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
         self.label_7 = QLabel(Form)
@@ -186,6 +205,8 @@ class Ui_Form(object):
         self.uNameLabel.setText(QCoreApplication.translate("Form", u"TextLabel", None))
         self.label_5.setText(QCoreApplication.translate("Form", u"Email", None))
         self.emailLabel.setText(QCoreApplication.translate("Form", u"TextLabel", None))
+        self.label_2.setText(QCoreApplication.translate("Form", u"Contact", None))
+        self.contactLabel.setText(QCoreApplication.translate("Form", u"TextLabel", None))
         self.label_7.setText(QCoreApplication.translate("Form", u"Credit Card", None))
         self.cardLabel.setText(QCoreApplication.translate("Form", u"TextLabel", None))
         self.rentHsBtn.setText(QCoreApplication.translate("Form", u"Rent History", None))
