@@ -7,7 +7,7 @@ from gui.link.catalog_page import Ui_Form
 
 from src.CarCatalog import CarCatalog
 from gui.car_description import CarDescription
-from gui.profile import Profile
+from gui.profile import ProfileUI
 
 
 class Catalog(QWidget):
@@ -40,7 +40,8 @@ class Catalog(QWidget):
         self.ui.brandComboBox.addItems(self.carCatalog.getBrandList())
         self.ui.typeComboBox.addItems(self.carCatalog.getCarTypeList())
 
-        self.profile = Profile()
+        self.profile = ProfileUI()
+        self.username = ""
 
         self.profile.setAttribute(Qt.WA_StyledBackground)
 
@@ -56,7 +57,12 @@ class Catalog(QWidget):
             # print(car)
             self.hBox.addWidget(description)
 
+    def setUser(self, username):
+        self.username = username
+        self.profile.setUser(self.username)
+
     def showProfile(self):
+        self.profile.setInfo()
         self.profile.show()
 
     def updateCatalogItem(self):
