@@ -3,6 +3,7 @@ from PySide6.QtWidgets import *
 from PySide6 import QtCore
 
 from gui.link.login_page import Ui_login_widget
+from gui.catalog import Catalog
 
 import sqlite3
 from sqlite3 import Error
@@ -13,7 +14,16 @@ class Login(QWidget):
         QWidget.__init__(self, None)
         self.ui = Ui_login_widget()
         self. ui.setupUi(self)
+        self.catalog = Catalog()
         self.ui.signin_button.clicked.connect(self.signin)
+        # self.ui.signin_button.clicked.connect(self.login)
+
+    # def login(self):
+    #     name = self.ui.username_field.text()
+    #
+    #     self.catalog.setUser(name)
+    #     self.catalog.show()
+    #     self.hide()
 
     def signin(self):
         name = self.ui.username_field.text()
@@ -24,6 +34,10 @@ class Login(QWidget):
             # correct password
             if self.ui.password_field.text() == self.decryptPassword(pwd):
                 print("logging in")
+                self.catalog.setUser(name)
+                self.catalog.show()
+                self.hide()
+
             # wrong password
             else:
                 print("Wrong password")
