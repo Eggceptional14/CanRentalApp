@@ -29,6 +29,8 @@ class ProfileUI(QWidget):
         self.ui.cardLabel.setText(self.profile.credCard)
 
     def showHistory(self):
+        self.history.setUser(self.user)
+        self.history.loadData()
         self.history.show()
 
 
