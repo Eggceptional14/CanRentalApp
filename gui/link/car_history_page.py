@@ -64,19 +64,19 @@ class Ui_CarHistory(object):
     # setupUi
 
     def retranslateUi(self, CarHistory):
-        CarHistory.setWindowTitle(QCoreApplication.translate("CarHistory", u"Form", None))
+        CarHistory.setWindowTitle(QCoreApplication.translate("CarHistory", u"History", None))
         ___qtablewidgetitem = self.tableWidget.horizontalHeaderItem(0)
-        ___qtablewidgetitem.setText(QCoreApplication.translate("CarHistory", u"Username", None));
+        ___qtablewidgetitem.setText(QCoreApplication.translate("CarHistory", u"Car Id", None));
         ___qtablewidgetitem1 = self.tableWidget.horizontalHeaderItem(1)
-        ___qtablewidgetitem1.setText(QCoreApplication.translate("CarHistory", u"Car ID", None));
+        ___qtablewidgetitem1.setText(QCoreApplication.translate("CarHistory", u"Car Model", None));
         ___qtablewidgetitem2 = self.tableWidget.horizontalHeaderItem(2)
-        ___qtablewidgetitem2.setText(QCoreApplication.translate("CarHistory", u"Car Model", None));
+        ___qtablewidgetitem2.setText(QCoreApplication.translate("CarHistory", u"Interval", None));
         ___qtablewidgetitem3 = self.tableWidget.horizontalHeaderItem(3)
-        ___qtablewidgetitem3.setText(QCoreApplication.translate("CarHistory", u"Pick Up Time", None));
+        ___qtablewidgetitem3.setText(QCoreApplication.translate("CarHistory", u"Pickup time", None));
         ___qtablewidgetitem4 = self.tableWidget.horizontalHeaderItem(4)
-        ___qtablewidgetitem4.setText(QCoreApplication.translate("CarHistory", u"Return Time", None));
+        ___qtablewidgetitem4.setText(QCoreApplication.translate("CarHistory", u"Return time", None));
         ___qtablewidgetitem5 = self.tableWidget.horizontalHeaderItem(5)
-        ___qtablewidgetitem5.setText(QCoreApplication.translate("CarHistory", u"Price", None));
+        ___qtablewidgetitem5.setText(QCoreApplication.translate("CarHistory", u"Branch", None));
         self.label.setText(QCoreApplication.translate("CarHistory", u"Car History", None))
     # retranslateUi
 
