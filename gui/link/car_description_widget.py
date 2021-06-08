@@ -121,12 +121,12 @@ class Ui_CarDescription(object):
 
         self.horizontalLayout_5.addWidget(self.label_5)
 
-        self.pphLabel = QLabel(self.frame)
-        self.pphLabel.setObjectName(u"pphLabel")
-        self.pphLabel.setMinimumSize(QSize(0, 30))
-        self.pphLabel.setMaximumSize(QSize(16777215, 30))
+        self.ppdLabel = QLabel(self.frame)
+        self.ppdLabel.setObjectName(u"ppdLabel")
+        self.ppdLabel.setMinimumSize(QSize(0, 30))
+        self.ppdLabel.setMaximumSize(QSize(16777215, 30))
 
-        self.horizontalLayout_5.addWidget(self.pphLabel)
+        self.horizontalLayout_5.addWidget(self.ppdLabel)
 
 
         self.verticalLayout_2.addLayout(self.horizontalLayout_5)
@@ -180,8 +180,8 @@ class Ui_CarDescription(object):
         self.modelLabel.setText(QCoreApplication.translate("CarDescription", u"TextLabel", None))
         self.label_4.setText(QCoreApplication.translate("CarDescription", u"Type", None))
         self.typeLabel.setText(QCoreApplication.translate("CarDescription", u"TextLabel", None))
-        self.label_5.setText(QCoreApplication.translate("CarDescription", u"Price Per Hour", None))
-        self.pphLabel.setText(QCoreApplication.translate("CarDescription", u"TextLabel", None))
+        self.label_5.setText(QCoreApplication.translate("CarDescription", u"Price Per Day", None))
+        self.ppdLabel.setText(QCoreApplication.translate("CarDescription", u"TextLabel", None))
         self.rentButton.setText(QCoreApplication.translate("CarDescription", u"Rent This Car", None))
     # retranslateUi
 
