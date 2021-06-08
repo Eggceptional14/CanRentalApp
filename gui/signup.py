@@ -6,6 +6,7 @@ from gui.link.signup_page import Ui_Form
 import sqlite3
 from sqlite3 import Error
 
+
 class Signup(QWidget):
 
     def __init__(self):
@@ -20,6 +21,8 @@ class Signup(QWidget):
         missing_field = ""
         if self.existText(self.ui.username_field.text()) is False:
             missing_field += "Username\n"
+        if self.existText(self.ui.nameField.text()) is False:
+            missing_field += "Name\n"
         if self.existText(self.ui.password_field.text()) is False:
             missing_field += "Password\n"
         if self.existText(self.ui.email_field.text()) is False:
@@ -43,19 +46,20 @@ class Signup(QWidget):
                 warning_message += "Contact information is invalid.\n"
             if self.validateCreditCard() is False:
                 warning_message += "Credit card information is invalid.\n"
-            
+
             if len(warning_message) != 0:
                 self.showdialog("There was an error in your input. Please try again.", warning_message)
             else:
-                self.createUser(self.ui.username_field.text(), self.ui.password_field.text(), self.ui.email_field.text(), self.ui.contact_field.text(), self.ui.card_field.text())
+                self.createUser(self.ui.username_field.text(), self.ui.nameField.text(), self.ui.password_field.text(),
+                                self.ui.email_field.text(), self.ui.contact_field.text(), self.ui.card_field.text())
                 self.close()
-    
+
     def validateUsername(self):
         name = self.ui.username_field.text()
 
         conn = None
         try:
-            conn = sqlite3.connect("../db/userInfo.db")
+            conn = sqlite3.connect("../db/rentalCar.db")
             cur = conn.cursor()
             cur.execute("SELECT * FROM userInformation WHERE userName=?", (name,))
             rows = cur.fetchall()
@@ -67,9 +71,10 @@ class Signup(QWidget):
             return True
 
         conn.close()
-    
+
     def validatePassword(self):
-        return self.ui.password_field.text() == self.ui.confirmPass_field.text() and len(self.ui.password_field.text()) >= 6
+        return self.ui.password_field.text() == self.ui.confirmPass_field.text() and len(
+            self.ui.password_field.text()) >= 6
 
     def validateEmail(self):
         return bool(re.search(r"^[\w\.\+\-]+\@[\w]+\.[a-z]{2,3}$", self.ui.email_field.text()))
@@ -79,25 +84,25 @@ class Signup(QWidget):
 
     def validateCreditCard(self):
         return (self.ui.card_field.text()).isnumeric
-    
+
     def existText(self, text):
         if text:
             print("True")
             return True
         print("False")
         return False
-    
-    def createUser(self, username, password, email, contact, creditCard):
+
+    def createUser(self, username, name, password, email, contact, creditCard):
         try:
-            sqliteConnection = sqlite3.connect("../db/userInfo.db")
+            sqliteConnection = sqlite3.connect("../db/rentalCar.db")
             cursor = sqliteConnection.cursor()
             print("Connected to SQLite")
 
             sqlite_insert_with_param = """INSERT INTO userInformation
-                            (userName, password, email, contact, creditCard) 
-                            VALUES (?, ?, ?, ?, ?);"""
+                            (userName, name, password, email, contact, creditCard) 
+                            VALUES (?, ?, ?, ?, ?, ?);"""
 
-            data_tuple = (username, password, email, contact, creditCard)
+            data_tuple = (username, name, password, email, contact, creditCard)
             cursor.execute(sqlite_insert_with_param, data_tuple)
             sqliteConnection.commit()
             print("Inserted successfully")
