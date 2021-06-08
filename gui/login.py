@@ -14,16 +14,25 @@ class Login(QWidget):
         QWidget.__init__(self, None)
         self.ui = Ui_login_widget()
         self. ui.setupUi(self)
-        self.catalog = Catalog()
         self.ui.signin_button.clicked.connect(self.signin)
-        # self.ui.signin_button.clicked.connect(self.login)
 
-    # def login(self):
+    # def signin(self):
     #     name = self.ui.username_field.text()
     #
-    #     self.catalog.setUser(name)
-    #     self.catalog.show()
-    #     self.hide()
+    #     pwd = self.getPassword(name)
+    #     # If the user enter the registered username
+    #     if pwd:
+    #         # correct password
+    #         if self.ui.password_field.text() == self.decryptPassword(pwd):
+    #             print("logging in")
+    #             self.catalog.setUser(name)
+    #             self.catalog.show()
+    #             self.setParent(None)
+    #
+    #         # wrong password
+    #         else:
+    #             print("Wrong password")
+    #             self.ui.password_field.setText("")
 
     def signin(self):
         name = self.ui.username_field.text()
@@ -32,11 +41,11 @@ class Login(QWidget):
         # If the user enter the registered username
         if pwd:
             # correct password
-            if self.ui.password_field.text() == self.decryptPassword(pwd):
+            if self.ui.password_field.text() == pwd:
                 print("logging in")
-                self.catalog.setUser(name)
+                self.catalog = Catalog(name)
                 self.catalog.show()
-                self.hide()
+                self.setParent(None)
 
             # wrong password
             else:
@@ -56,7 +65,7 @@ class Login(QWidget):
                 self.ui.username_field.setText("")
                 return
             else:
-                return rows[0][1]
+                return rows[0][2]
         except Error as e:
             print(e)
 
