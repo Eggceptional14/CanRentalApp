@@ -14,31 +14,41 @@ class Checkout(QWidget):
         self.ui = Ui_Form()
         self.ui.setupUi(self)
         self.car = None
+        self.username = ""
 
         self.ui.checkoutBtn.clicked.connect(self.createOrder)
+        # self.recordCarReservation(car, self.getUsername())
 
     def setChoosenCar(self, car):
         self.car = car
         self.ui.brandLabel.setText(self.car.getBrand())
         self.ui.typeLabel.setText(self.car.getCarType())
         self.ui.modelLabel.setText(self.car.getCarModel())
-        self.ui.priceLabel.setText(str(self.car.getPrice()) + " ฿")
+        self.ui.priceLabel.setText(str(self.car.getPrice()) + " Baht")
 
     def createOrder(self):
+        # print(self.username)
         msg = QMessageBox()
         msg.setIcon(QMessageBox.Information)
 
         message = "Reservation ID: {resvId}\n\
                     From {sDate} to {rDate}\n\
                     Car ID: {cId} {cBrand} {cModel}".format(resvId=self.getReservationId(), sDate=self.getStartDate(), rDate=self.getReturnDate(),
-                                                            cId=self.car.getCarId, cBrand=self.car.getBrand, cModel=self.car.getCarModel)
+                                                            cId=self.car.getCarId(), cBrand=self.car.getBrand(), cModel=self.car.getCarModel())
 
         msg.setText("Checkout:")
         msg.setWindowTitle("Checkout")
         msg.setDetailedText(message)
         msg.setStandardButtons(QMessageBox.Ok)
 
+        self.recordCarReservation(self.car, self.username)
         msg.exec_()
+
+    def setUsername(self, username):
+        self.username = username
+    
+    def getUsername(self):
+        return self.username
 
     def getStartDate(self):
         return self.ui.startInput.text()
@@ -50,13 +60,10 @@ class Checkout(QWidget):
         conn = None
         try:
             conn = sqlite3.connect("../db/rentalCar.db")
-            cur = conn.cursor()
-            cur.execute("SELECT COUNT (*) FROM fixtures")
-            rowcount = cur.fetchone()[0]
-            if len(rowcount) == 0:
-                return
-            else:
-                return rowcount
+            cursor = conn.cursor()
+            cursor.execute("SELECT COUNT (*) FROM reservationHistory")
+            rowcount = cursor.fetchone()[0]
+            return rowcount
         except Error as e:
             print(e)
 
@@ -67,7 +74,7 @@ class Checkout(QWidget):
         endDate = self.getReturnDate()
 
         try:
-            sqliteConnection = sqlite3.connect("../db/userInfo.db")
+            sqliteConnection = sqlite3.connect("../db/rentalCar.db")
             cursor = sqliteConnection.cursor()
             print("Connected to SQLite")
 

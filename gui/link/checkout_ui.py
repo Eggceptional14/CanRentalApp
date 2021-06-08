@@ -220,7 +220,7 @@ class Ui_Form(object):
         self.modelLabel.setText(QCoreApplication.translate("Form", u"TextLabel", None))
         self.brandLabel.setText(QCoreApplication.translate("Form", u"TextLabel", None))
         self.typeLabel.setText(QCoreApplication.translate("Form", u"TextLabel", None))
-        self.label_12.setText(QCoreApplication.translate("Form", u"Price Per Hour", None))
+        self.label_12.setText(QCoreApplication.translate("Form", u"Price Per Day", None))
         self.priceLabel.setText(QCoreApplication.translate("Form", u"TextLabel", None))
         self.label_4.setText(QCoreApplication.translate("Form", u"Start Date", None))
         self.startInput.setPlaceholderText(QCoreApplication.translate("Form", u"input format: DDMMYYYY", None))
