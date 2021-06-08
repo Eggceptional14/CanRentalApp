@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>650</width>
+    <height>450</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>650</width>
+    <height>450</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>650</width>
+    <height>450</height>
+   </size>
+  </property>
+  <property name="font">
+   <font>
+    <family>Comic Sans MS</family>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Reservation</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget{
+	
+	background-image: url(:/login/login_background.png);
+}
+
+QFrame {
+	background: #d9d9d9;
+	border: 1px solid #d9d9d9;
+	border-radius: 20px;
+}
+
+QLabel {
+	border: none;
+	background: none;
+}
+
+QDateEdit {
+	background: white;
+}
+
+QTimeEdit {
+	background: white;
+}
+
+QComboBox {
+	background: white;
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_3">
+    <item alignment="Qt::AlignLeft">
+     <widget class="QLabel" name="label">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>50</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel{
+	font-weight: bold;
+	color:white;
+}</string>
+      </property>
+      <property name="text">
+       <string>CAR RENTAL RESERVATION</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_9">
+      <item>
+       <widget class="QFrame" name="frame">
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+	color: #666666;
+	font-weight: bold;
+}
+
+QPushButton {
+	background: none;
+}</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <item>
+          <widget class="QLabel" name="pickup_label">
+           <property name="text">
+            <string>Pick-up date and time:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout">
+           <item>
+            <widget class="QDateEdit" name="pickup_dateEdit">
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTimeEdit" name="pickup_timeEdit"/>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_4">
+           <property name="text">
+            <string>Return date and time:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <item>
+            <widget class="QDateEdit" name="return_dateEdit"/>
+           </item>
+           <item>
+            <widget class="QTimeEdit" name="return_timeEdit"/>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QLabel" name="selectBranch_label">
+           <property name="text">
+            <string>Service branch:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="serviceBranch_comboBox">
+           <property name="styleSheet">
+            <string notr="true">QComboBox {
+    border: 1px solid gray;
+    border-radius: 3px;
+    padding: 1px 18px 1px 3px;
+    min-width: 6em;
+}</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="setInfo_button">
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+    border: 2px solid #11879C;
+    border-radius: 6px;
+    background-color: #11879C;
+    min-width: 80px;
+	font: 16px;
+	font-weight: bold;
+	color: white;
+}
+
+QPushButton::pressed {
+	background-color: #2B587B;
+	border-color: #2B587B;
+}
+</string>
+           </property>
+           <property name="text">
+            <string>Set Info</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="Line" name="line">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QFrame" name="frame_2">
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+	color: #666666;
+	font-weight: bold;
+}
+
+QPushButton {
+	background: none;
+}</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item>
+          <widget class="QLabel" name="reservation_label">
+           <property name="text">
+            <string>RESERVATION INFORMATION</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_3">
+           <item>
+            <widget class="QLabel" name="model_label">
+             <property name="text">
+              <string>car model:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="modelLabel">
+             <property name="text">
+              <string>TextLabel</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_4">
+           <item>
+            <widget class="QLabel" name="price_label">
+             <property name="text">
+              <string>Price per day:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="priceLabel">
+             <property name="text">
+              <string>TextLabel</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_5">
+           <item>
+            <widget class="QLabel" name="interval_label">
+             <property name="text">
+              <string>Rental's interval:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="intervalLabel">
+             <property name="text">
+              <string>TextLabel</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_6">
+           <item>
+            <widget class="QLabel" name="days_label">
+             <property name="text">
+              <string>total days:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="totalDayLabel">
+             <property name="text">
+              <string>TextLabel</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_7">
+           <item>
+            <widget class="QLabel" name="branch_label">
+             <property name="text">
+              <string>Service branch:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="branchLabel">
+             <property name="text">
+              <string>TextLabel</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_8">
+           <item>
+            <widget class="QLabel" name="totalPrice_label">
+             <property name="text">
+              <string>Total price:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="totalPriceLabel">
+             <property name="text">
+              <string>TextLabel</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QPushButton" name="confirm_button">
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+    border: 2px solid #11879C;
+    border-radius: 6px;
+    background-color: #11879C;
+    min-width: 80px;
+	font: 16px;
+	font-weight: bold;
+	color: white;
+}
+
+QPushButton::pressed {
+	background-color: #2B587B;
+	border-color: #2B587B;
+}
+</string>
+           </property>
+           <property name="text">
+            <string>confirm</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources>
+  <include location="../assets/images.qrc"/>
+ </resources>
+ <connections/>
+</ui>
