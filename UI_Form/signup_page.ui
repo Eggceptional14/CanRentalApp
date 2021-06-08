@@ -116,7 +116,7 @@ QPushButton {
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="lineEdit">
+       <widget class="QLineEdit" name="username_field">
         <property name="maximumSize">
          <size>
           <width>700</width>
@@ -132,7 +132,20 @@ QPushButton {
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="lineEdit_2">
+       <widget class="QLineEdit" name="nameField">
+        <property name="maximumSize">
+         <size>
+          <width>700</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="placeholderText">
+         <string>Full name</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="email_field">
         <property name="maximumSize">
          <size>
           <width>700</width>
@@ -148,7 +161,7 @@ QPushButton {
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="lineEdit_3">
+       <widget class="QLineEdit" name="contact_field">
         <property name="maximumSize">
          <size>
           <width>700</width>
@@ -164,7 +177,7 @@ QPushButton {
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="lineEdit_4">
+       <widget class="QLineEdit" name="card_field">
         <property name="maximumSize">
          <size>
           <width>700</width>
@@ -180,7 +193,7 @@ QPushButton {
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="lineEdit_5">
+       <widget class="QLineEdit" name="password_field">
         <property name="maximumSize">
          <size>
           <width>700</width>
@@ -196,7 +209,7 @@ QPushButton {
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="lineEdit_6">
+       <widget class="QLineEdit" name="confirmPass_field">
         <property name="maximumSize">
          <size>
           <width>700</width>
@@ -212,7 +225,7 @@ QPushButton {
        </widget>
       </item>
       <item alignment="Qt::AlignRight">
-       <widget class="QPushButton" name="pushButton">
+       <widget class="QPushButton" name="signup_button">
         <property name="minimumSize">
          <size>
           <width>150</width>
