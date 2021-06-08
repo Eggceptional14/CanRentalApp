@@ -11,10 +11,14 @@ from gui.profile import ProfileUI
 
 
 class Catalog(QWidget):
-    def __init__(self):
+    def __init__(self, user):
         QWidget.__init__(self, None)
         self.ui = Ui_Form()
         self.ui.setupUi(self)
+
+        self.profile = ProfileUI()
+        self.username = user
+        self.profile.setUser(self.username)
 
         self.hBox = QHBoxLayout()
         self.carCatalog = CarCatalog()
@@ -40,9 +44,6 @@ class Catalog(QWidget):
         self.ui.brandComboBox.addItems(self.carCatalog.getBrandList())
         self.ui.typeComboBox.addItems(self.carCatalog.getCarTypeList())
 
-        self.profile = ProfileUI()
-        self.username = ""
-
         self.profile.setAttribute(Qt.WA_StyledBackground)
 
     def createCarList(self, items):
@@ -55,6 +56,7 @@ class Catalog(QWidget):
         for car in items:
             description = CarDescription(car)
             # print(car)
+            description.setUser(self.username)
             self.hBox.addWidget(description)
 
     def setUser(self, username):
