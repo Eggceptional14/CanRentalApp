@@ -6,6 +6,7 @@ from PySide6.QtGui import *
 from gui.link.car_description_widget import Ui_CarDescription
 from src.CarCatalog import CarCatalog
 from gui.checkout import Checkout
+from gui.reservation import Reservation
 
 
 class CarDescription(QWidget):
@@ -15,14 +16,25 @@ class CarDescription(QWidget):
         self.ui.setupUi(self)
         self.car = car
         self.setInfo()
-        self.history = Checkout()
+        self.user = ""
+        # self.checkout = Checkout()
+        self.reservation = Reservation()
+        self.reservation.setAttribute(Qt.WA_StyledBackground)
         self.ui.rentButton.clicked.connect(self.rentCar)
 
+    # def rentCar(self):
+    #     self.checkout.setChoosenCar(self.car)
+    #     self.checkout.setAttribute(Qt.WA_StyledBackground)
+    #     self.checkout.show()
+    #     print(self.car)
+
     def rentCar(self):
-        self.history.setChoosenCar(self.car)
-        self.history.setAttribute(Qt.WA_StyledBackground)
-        self.history.show()
-        print(self.car)
+        self.reservation.loadInfo(self.car, self.user)
+        self.reservation.setInfo()
+        self.reservation.show()
+
+    def setUser(self, username):
+        self.user = username
 
     def setInfo(self):
         image = QImage.fromData(self.car.getImage())
@@ -32,7 +44,7 @@ class CarDescription(QWidget):
         self.ui.brandLabel.setText(str(self.car.getBrand()))
         self.ui.modelLabel.setText(str(self.car.getCarModel()))
         self.ui.typeLabel.setText(str(self.car.getCarType()))
-        self.ui.pphLabel.setText(str(self.car.getPrice()))
+        self.ui.ppdLabel.setText(str(self.car.getPrice()))
 
 
 if __name__ == '__main__':
