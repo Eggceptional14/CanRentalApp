@@ -8,7 +8,6 @@
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
 
-from PySide6 import Qt
 from PySide6.QtCore import *
 from PySide6.QtGui import *
 from PySide6.QtWidgets import *
@@ -58,7 +57,7 @@ class Ui_Form(object):
 "	font: 18px;\n"
 "	font-weight: bold;\n"
 "	border-radius: 10px;\n"
-"	background-color: #0c7b93;\n"
+"	background-color: rgb(17, 127, 130);\n"
 "}")
         self.frame.setFrameShape(QFrame.NoFrame)
         self.frame.setFrameShadow(QFrame.Raised)
@@ -81,46 +80,44 @@ class Ui_Form(object):
         self.verticalLayout.addWidget(self.label)
 
         self.username_field = QLineEdit(self.frame)
-        self.username_field.setAttribute(Qt.WA_MacShowFocusRect, 0)
         self.username_field.setObjectName(u"username_field")
         self.username_field.setMaximumSize(QSize(700, 40))
 
         self.verticalLayout.addWidget(self.username_field)
 
+        self.nameField = QLineEdit(self.frame)
+        self.nameField.setObjectName(u"nameField")
+        self.nameField.setMaximumSize(QSize(700, 40))
+
+        self.verticalLayout.addWidget(self.nameField)
+
         self.email_field = QLineEdit(self.frame)
-        self.email_field.setAttribute(Qt.WA_MacShowFocusRect, 0)
         self.email_field.setObjectName(u"email_field")
         self.email_field.setMaximumSize(QSize(700, 40))
 
         self.verticalLayout.addWidget(self.email_field)
 
         self.contact_field = QLineEdit(self.frame)
-        self.contact_field.setAttribute(Qt.WA_MacShowFocusRect, 0)
         self.contact_field.setObjectName(u"contact_field")
         self.contact_field.setMaximumSize(QSize(700, 40))
 
         self.verticalLayout.addWidget(self.contact_field)
 
         self.card_field = QLineEdit(self.frame)
-        self.card_field.setAttribute(Qt.WA_MacShowFocusRect, 0)
         self.card_field.setObjectName(u"card_field")
         self.card_field.setMaximumSize(QSize(700, 40))
 
         self.verticalLayout.addWidget(self.card_field)
 
         self.password_field = QLineEdit(self.frame)
-        self.password_field.setAttribute(Qt.WA_MacShowFocusRect, 0)
         self.password_field.setObjectName(u"password_field")
         self.password_field.setMaximumSize(QSize(700, 40))
-        self.password_field.setEchoMode(QLineEdit.Password)
 
         self.verticalLayout.addWidget(self.password_field)
 
         self.confirmPass_field = QLineEdit(self.frame)
-        self.confirmPass_field.setAttribute(Qt.WA_MacShowFocusRect, 0)
         self.confirmPass_field.setObjectName(u"confirmPass_field")
         self.confirmPass_field.setMaximumSize(QSize(700, 40))
-        self.confirmPass_field.setEchoMode(QLineEdit.Password)
 
         self.verticalLayout.addWidget(self.confirmPass_field)
 
@@ -132,11 +129,7 @@ class Ui_Form(object):
         font1.setBold(True)
         font1.setItalic(False)
         self.signup_button.setFont(font1)
-        self.signup_button.setStyleSheet(u"QPushButton:pressed {\n"
-"	background: none;\n"
-"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                      stop: 0 #0C5A76, stop: 1 #0c7b93);\n"
-"}")
+        self.signup_button.setStyleSheet(u"")
 
         self.verticalLayout.addWidget(self.signup_button, 0, Qt.AlignRight)
 
@@ -154,8 +147,9 @@ class Ui_Form(object):
         self.label.setText(QCoreApplication.translate("Form", u"Sign up", None))
         self.username_field.setText("")
         self.username_field.setPlaceholderText(QCoreApplication.translate("Form", u"Username", None))
+        self.nameField.setPlaceholderText(QCoreApplication.translate("Form", u"Full name", None))
         self.email_field.setText("")
-        self.email_field.setPlaceholderText(QCoreApplication.translate("Form", u"E-mail", None))
+        self.email_field.setPlaceholderText(QCoreApplication.translate("Form", u"Email", None))
         self.contact_field.setText("")
         self.contact_field.setPlaceholderText(QCoreApplication.translate("Form", u"Contact", None))
         self.card_field.setText("")
